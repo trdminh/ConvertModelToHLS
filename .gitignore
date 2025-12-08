@@ -1,0 +1,7 @@
+X.txt
+Y.txt
+*.h5
+*ipynb
+/env
+/__pycache__
+*.pdf
