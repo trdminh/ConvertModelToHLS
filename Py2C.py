@@ -95,8 +95,8 @@ class Py2C:
         self.call_function = ""
         self.out = ["", ""]
         self.full_source_CNN_cc.append(["", "&InModel[0]"])
-        self.path_w = ["Conv.cpp", "Conv.h", "Pool.cpp", "Pool.h", "Dense.cpp", "Dense.h", "CNN.cpp", "CNN.h",
-                       "CNN_tb.cpp"]
+        self.path_w = ["hls/Conv.cpp", "hls/Conv.h", "hls/Pool.cpp", "hls/Pool.h", "hls/Dense.cpp", "hls/Dense.h", "hls/CNN.cpp", "hls/CNN.h",
+                       "hls/CNN_tb.cpp"]
         print("Model Information")
         # self.model.summary()
 
@@ -4000,7 +4000,7 @@ class Py2C:
             self.del_one_file(name)
 
 
-    def Write_Float_Weights_File(self, path="Float_Weights.txt"):
+    def Write_Float_Weights_File(self, path="hls/Float_Weights.txt"):
         assert len(self.Weights) != 0, "Converting has not implemented yet!!! Please Run convert2C in Py2C"
         with open(path, mode='w') as f:
             for i in self.Weights:
