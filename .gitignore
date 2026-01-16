@@ -5,3 +5,7 @@ Y.txt
 /env
 /__pycache__
 *.pdf
+*.npy
+/SCUT-WMN DataSet
+*.jpg
+*.png

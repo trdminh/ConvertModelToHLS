@@ -6,6 +6,10 @@
 #include <ap_axi_sdata.h>
 typedef ap_fixed<32,16> fxp;
 void CNN(fxp InModel[1024],fxp &OutModel0,fxp Weights[274404]){
+#pragma HLS INTERFACE m_axi port = InModel offset = slave bundle = gmem0 depth = 1024
+#pragma HLS INTERFACE m_axi port = Weights offset = slave bundle = gmem0 depth = 274404
+#pragma HLS INTERFACE s_axilite port = OutModel0 bundle = control
+#pragma HLS INTERFACE s_axilite port = return bundle = control
 	fxp OutPadConv0[1156];
 	fxp initial_conv[16384];
 	fxp initial_bn[16384];
